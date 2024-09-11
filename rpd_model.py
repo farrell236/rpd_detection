@@ -87,7 +87,7 @@ class RPD_Model_2(tf.keras.Model):
     def call(self, inputs, **kwargs):
 
         faf = self.faf_branch(inputs['faf_input'])
-        cfp = self.cfp_branch(inputs['faf_input'])
+        cfp = self.cfp_branch(inputs['cfp_input'])
 
         faf_to_cfp = self.faf_to_cfp(faf, cfp)
         cfp_to_faf = self.cfp_to_faf(cfp, faf)
