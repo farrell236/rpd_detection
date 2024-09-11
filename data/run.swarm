@@ -1,0 +1,15 @@
+#! /bin/bash
+
+#SWARM --threads-per-process 4
+#SWARM --gb-per-process 16
+#SWARM --logdir /data/houbb/.logs/biowulf/areds2_rpd
+
+python AREDS2.py faf_cfp_pairs.csv 1 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 2 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 3 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 4 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 5 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 6 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 7 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 8 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
+python AREDS2.py faf_cfp_pairs.csv 9 9 2048 /data/houbb/data/AREDS/AREDS2/jpeg /data/houbb/data/AREDS/AREDS2/rpd_pp_2048
