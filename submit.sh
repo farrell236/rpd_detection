@@ -4,12 +4,14 @@
 #SBATCH --mem-per-cpu=2g
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:a100:1
-#SBATCH --error=/data/houbb/.logs/biowulf/rpd/faf_only_model.err
-#SBATCH --output=/data/houbb/.logs/biowulf/rpd/faf_only_model.out
+#SBATCH --error=/data/houbb/.logs/biowulf/rpd/faf_cfp_model_nopp_1024.err
+#SBATCH --output=/data/houbb/.logs/biowulf/rpd/faf_cfp_model_nopp_1024.out
 #SBATCH --time=5-00:00:00
 
-source /data/houbb/_venv/python39/bin/activate
 module load cuDNN/8.2.1/CUDA-11.3 python/3.9 CUDA/11.3  # gcc/9.2.0
+source /data/houbb/_venv/tfenv/bin/activate
 
-python main_single.py
-#python main_dual.py
+export XLA_FLAGS='--xla_gpu_cuda_data_dir=/usr/local/CUDA/11.3.0/'
+export WANDB_API_KEY='REDACTED'
+
+python train.py --config configs/default.json

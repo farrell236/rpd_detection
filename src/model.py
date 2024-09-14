@@ -106,6 +106,4 @@ if __name__ == '__main__':
     cfp_input = tf.random.uniform(shape=(1, 224, 224, 3), minval=1, maxval=255, dtype=tf.int32)
 
     model = RPD_Model_2()
-    output = model(faf_input, cfp_input)
-
-    a=1
+    output = model({'faf_input': faf_input, 'cfp_input': cfp_input})
