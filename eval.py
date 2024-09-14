@@ -23,7 +23,6 @@ if __name__ == "__main__":
     os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
     os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'  # Consistent GPU indexing
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu  # Select GPU based on argument
-    os.environ['XLA_FLAGS'] = '--xla_gpu_cuda_data_dir=/usr/local/CUDA/11.3.0/'
 
     # Load the pre-trained model
     model_path = f'{args.checkpoint_dir}/{args.config_name}.tf'

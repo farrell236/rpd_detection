@@ -39,7 +39,6 @@ if __name__ == '__main__':
     os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
     os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'  # Ensures consistent GPU indexing in case of multiple GPUs
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu  # Sets which GPU to use based on the command-line argument
-    os.environ['XLA_FLAGS'] = '--xla_gpu_cuda_data_dir=/usr/local/CUDA/11.3.0/'
 
     # Determine input shape and weights based on command-line arguments
     input_shapes = (args.img_x, args.img_y, args.img_ch)  # Defines the input shape for the model
@@ -49,7 +48,7 @@ if __name__ == '__main__':
     if args.task == 'combined':
         # Use a more complex model suitable for combined inputs
         model = RPD_Model_2(n_classes=1, input_shape=input_shapes, weights=weights,
-                            num_heads=12, key_dim=args.key_dim, dropout=args.dropout_rate,
+                            num_heads=args.num_heads, key_dim=args.key_dim, dropout=args.dropout_rate,
                             name='RPD_Model_combined')
     else:
         # Use a simpler model for single input tasks
